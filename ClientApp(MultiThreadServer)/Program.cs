@@ -16,7 +16,7 @@ namespace ClientApp_MultiThreadServer_
             for (int i = 0; i < 5; i++)
             {
                 Console.WriteLine("\nСоединение # " + i.ToString() + "\n");
-                Connect("127.0.0.1", "Hello World! # " + i.ToString());
+                Connect("127.0.0.1", "Привет мир! # " + i.ToString());
             }
             Console.WriteLine("\n Нажмите Enter ...");
             Console.Read();
@@ -31,7 +31,7 @@ namespace ClientApp_MultiThreadServer_
                 Int32 port = 9595;
                 TcpClient client = new TcpClient(server, port);
                 //Переводим наше сообщение в ASCII, а потом в массив байт
-                Byte[] data = Encoding.ASCII.GetBytes(message);
+                byte[] data = Encoding.ASCII.GetBytes(message);
                 //Получаем  поток для чтения и записи данных 
                 NetworkStream stream = client.GetStream();
                 //Отправляем сообщение нашему серверу
